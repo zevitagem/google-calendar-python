@@ -5,6 +5,7 @@ class ListExecutator():
     def __init__(self, service):
         self.service = service
 
+
     def get_events(self):
         # Call the Calendar API
         now = datetime.datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time

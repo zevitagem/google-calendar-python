@@ -11,7 +11,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 from list_executator import ListExecutator
-
+from insert_executator import InsertExecutator
 
 
 def auth():
@@ -46,6 +46,7 @@ def auth():
 
     return creds
 
+
 def main():
     try:
         creds = auth()
@@ -53,9 +54,12 @@ def main():
 
         _, action = tuple(sys.argv)
         if (action == 'list'):
-            list_executator = ListExecutator(service)
-            list_executator.execute()
-        
+            executator = ListExecutator(service)
+
+        if (action == 'insert'):
+            executator = InsertExecutator(service)
+
+        executator.execute()
 
     except HttpError as error:
         print('An error occurred: %s' % error)
