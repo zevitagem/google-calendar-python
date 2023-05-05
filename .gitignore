@@ -2,3 +2,5 @@ token.json
 credentials.json
 .vscode
 google-calendar-venv
+__pycache__
+.DS_Store
