@@ -12,6 +12,7 @@ from googleapiclient.errors import HttpError
 
 from list_executator import ListExecutator
 from insert_executator import InsertExecutator
+from update_executator import UpdateExecutator
 
 
 def auth():
@@ -52,12 +53,16 @@ def main():
         creds = auth()
         service = build('calendar', 'v3', credentials=creds)
 
-        _, action = tuple(sys.argv)
+        _, action, *_ = tuple(sys.argv)
         if (action == 'list'):
             executator = ListExecutator(service)
 
         if (action == 'insert'):
             executator = InsertExecutator(service)
+
+        if (action == 'update'):
+            executator = UpdateExecutator(service)
+            executator.configure({'id': sys.argv[2]})
 
         executator.execute()
 

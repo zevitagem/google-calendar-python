@@ -15,11 +15,11 @@ class InsertExecutator():
             'location': '800 Howard St., San Francisco, CA 94103',
             'description': 'A chance to hear more about Google\'s developer products.',
             'start': {
-                'dateTime': '2023-05-06T09:00:00-07:00',
+                'dateTime': '2023-05-08T10:00:00-07:00',
                 'timeZone': 'America/Los_Angeles',
             },
             'end': {
-                'dateTime': '2023-05-06T17:00:00-07:00',
+                'dateTime': '2023-05-08T11:00:00-07:00',
                 'timeZone': 'America/Los_Angeles',
             },
             'recurrence': [
