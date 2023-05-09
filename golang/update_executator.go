@@ -30,7 +30,7 @@ func (ue *UpdateExecutator) Execute() {
 		log.Fatalf("Failed to retrieve event: %v", err)
 	}
 
-	event.Summary = "Appointment at Somewhere - ze update"
+	event.Summary = "Appointment at Somewhere - Update"
 
 	updatedEvent, err := eventService.Update("primary", ue.id, event).Do()
 	if err != nil {
