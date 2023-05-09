@@ -12,7 +12,7 @@ class UpdateExecutator():
         id = self._id #'827gj35869mlimobovmajc1m94'
         event = events_service.get(calendarId='primary', eventId=id).execute()
 
-        event['summary'] = 'Appointment at Somewhere - ze update'
+        event['summary'] = 'Appointment at Somewhere - Update'
 
         updated_event = events_service.update(calendarId='primary', eventId=event['id'], body=event).execute()
         

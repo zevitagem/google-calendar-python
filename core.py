@@ -24,7 +24,6 @@ def auth():
     """
     creds = None
     token_file = './token.json'
-    credentials_file = './credentials.json'
     
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
@@ -37,6 +36,7 @@ def auth():
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
+            credentials_file = './credentials.json'
             flow = InstalledAppFlow.from_client_secrets_file(
                 credentials_file, SCOPES)
             creds = flow.run_local_server(port=0)
